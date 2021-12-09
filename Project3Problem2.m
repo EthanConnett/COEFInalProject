@@ -8,6 +8,7 @@ Qext =  a*exp(-b*xvec).*sin(theta*xvec);
 Htimederiv = [-100/dx.^2; zeros(length(tvec)-2,1)]';
 H = [100 zeros(1,length(xvec)-1); zeros(length(tvec)-1,length(xvec))];
 H(:,1) = 100;
+H(1,1) = 0;
 
 k1vec = ones(1,700) * k1 ;
 k2vec = (k2 - k1) * ( (xvec(701:799)-L1) / L12  ) + k1;
